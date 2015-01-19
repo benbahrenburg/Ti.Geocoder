@@ -283,6 +283,7 @@
         _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         NSString * purpose = [TiUtils stringValue:[self valueForUndefinedKey:@"purpose"]];
         if(purpose!=nil){
+            #pragma clang diagnostic ignored "-Wdeprecated-declarations"
             if ([_locationManager respondsToSelector:@selector(setPurpose)]) {
                 [_locationManager setPurpose:purpose];
             }
