@@ -124,6 +124,8 @@ public class CommonHelpers {
 		if(place.hasLongitude()){
 			results.put("longitude", place.getLongitude());
 		}
+		results.put("featureName", place.getFeatureName());
+		results.put("premises", place.getPremises());
 		return results;		
 	}
 	public static Boolean reverseGeoSupported(){
