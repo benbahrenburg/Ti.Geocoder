@@ -5,7 +5,7 @@ The Ti.Geocoder module provides access to the native geo decoders on Android and
 <h2>Before you start</h2>
 * You need Titanium 3.5.0.GA or greater.
 * This module has only been tested on iOS7+ and Android 4+
-*
+
 <h2>tiapp.xml update</h2>
 
 If you plan to support iOS you will need to add the NSLocationAlwaysUsageDescription or NSLocationUsageDescription entry in your tiapp.xml as shown below.  The string value displays the purpose message that the user will be alerted when GPS access is requested.
@@ -51,14 +51,6 @@ Returns a Boolean value indicating whether the location manager is able to gener
 <h4>locationServicesEnabled</h4>
 
 Indicates if the user has enabled or disabled location services for the device
-
-Method returns true or false
-
-<h4>regionMonitoringAvailable</h4>
-
-Indicates if the device supports region monitoring.  If your app is running on a wifi only device you will not be able to use this feature. 
-
-This feature is only supported on limited devices, so it is recommended you always test before using.
 
 Method returns true or false
 
