@@ -17,7 +17,8 @@
     //KrollCallback *positionCallback;
     KrollCallback *_placeCallback;
     float _staleLimit;
-    CLLocationManager *_locationManager;
 }
+
+@property (nonatomic, strong) CLLocationManager * locManager;
 
 @end

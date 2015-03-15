@@ -5,10 +5,10 @@
 version: 1.0.0
 apiversion: 2
 architectures: armv7 arm64 i386 x86_64
-description: TiGeocoder
-author: Your Name
-license: Specify your license
-copyright: Copyright (c) 2015 by Your Company
+description: Ti.Geocoder native access to iOS Geo Coders
+author: Benjamin Bahrenburg (bencoding)
+license: Apache 2
+copyright: Copyright (c) 2015 by Benjamin Bahrenburg (bencoding)
 
 # these should not be edited
 name: TiGeocoder

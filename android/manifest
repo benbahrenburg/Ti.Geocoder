@@ -5,10 +5,10 @@
 version: 1.0.0
 apiversion: 2
 architectures: armeabi armeabi-v7a x86
-description: tigeocoder
-author: Your Name
-license: Specify your license
-copyright: Copyright (c) 2015 by Your Company
+description: Ti.Geocoder native access to Android Geo Coders
+author: Ben Bahrenburg (bencoding)
+license: Apache 2
+copyright: Copyright (c) 2015 by Benjamin Bahrenburg (bencoding)
 
 # these should not be edited
 name: tigeocoder

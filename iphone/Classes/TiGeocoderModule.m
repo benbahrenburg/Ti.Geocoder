@@ -21,6 +21,8 @@
 //BXBGeoHelpers
 @implementation TiGeocoderModule
 
+@synthesize locManager;
+
 #pragma mark Internal
 
 // this is generated for your module, please do not change it
@@ -268,28 +270,28 @@
 
 -(CLLocationManager*)tempLocationManager
 {
-    if (_locationManager!=nil)
+    if (locManager!=nil)
     {
         // if we have an instance, just use it
-        return _locationManager;
+        return locManager;
     }
  
     BXBGeoHelpers * helpers = [[BXBGeoHelpers alloc] init];
     [helpers requestPermission];
     
-    if (_locationManager == nil) {
-        _locationManager = [[CLLocationManager alloc] init];
-        _locationManager.delegate = self;
-        _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    if (locManager == nil) {
+        locManager = [[CLLocationManager alloc] init];
+        locManager.delegate = self;
+        locManager.desiredAccuracy = kCLLocationAccuracyBest;
         NSString * purpose = [TiUtils stringValue:[self valueForUndefinedKey:@"purpose"]];
         if(purpose!=nil){
             #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-            if ([_locationManager respondsToSelector:@selector(setPurpose)]) {
-                [_locationManager setPurpose:purpose];
+            if ([locManager respondsToSelector:@selector(setPurpose)]) {
+                [locManager setPurpose:purpose];
             }
         }
     }
-    return _locationManager;
+    return locManager;
 }
 
 -(void)startFindingLocation
@@ -303,7 +305,7 @@
 
 -(void) shutdownFindingLocation
 {
-    if(_locationManager!=nil)
+    if(locManager!=nil)
     {
         [[self tempLocationManager] stopUpdatingLocation];
     }
