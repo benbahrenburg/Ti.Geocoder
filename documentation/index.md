@@ -46,14 +46,6 @@ Indicates of the module is supported
 
 Method returns true or false
 
-Returns a Boolean value indicating whether the location manager is able to generate heading-related events.
-
-<h4>locationServicesEnabled</h4>
-
-Indicates if the user has enabled or disabled location services for the device
-
-Method returns true or false
-
 <h4>getCurrentPlace</h4>
 
 Retrieves the last known place information (address) from the device.
