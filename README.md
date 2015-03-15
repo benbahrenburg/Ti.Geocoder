@@ -166,4 +166,4 @@ Please consider following the [@bencoding Twitter](http://www.twitter.com/bencod
 
 <h3>Blog</h3>
 
-For module updates, Titanium tutorials and more please check out my blog at [bencoding.Com](http://bencoding.com). 
+For module updates, Titanium tutorials and more please check out my blog at [bencoding.com](http://bencoding.com). 
