@@ -13,7 +13,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 
-@interface BXBGeoHelpers : NSObject<CLLocationManagerDelegate>{
+@interface BXBGeocoderHelpers : NSObject<CLLocationManagerDelegate>{
     CLLocationManager *locationPermissionManager; // used for just permissions requests
 }
 

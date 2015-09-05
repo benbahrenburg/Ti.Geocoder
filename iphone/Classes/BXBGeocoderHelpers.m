@@ -8,9 +8,10 @@
  *
  */
 
-#import "BXBGeoHelpers.h"
+#import "BXBGeocoderHelpers.h"
+#import "TiUtils.h"
 
-@implementation BXBGeoHelpers
+@implementation BXBGeocoderHelpers
 
 -(CLLocationManager*)locationPermissionManager
 {
@@ -18,6 +19,11 @@
     if (locationPermissionManager == nil) {
         locationPermissionManager = [[CLLocationManager alloc] init];
         locationPermissionManager.delegate = self;
+        if([TiUtils isIOS9OrGreater]){
+            #if IS_XCODE_7
+            locationPermissionManager.allowsBackgroundLocationUpdates = YES;
+            #endif
+        }
     }
     return locationPermissionManager;
 }

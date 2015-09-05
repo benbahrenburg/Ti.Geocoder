@@ -14,8 +14,8 @@
 #import "TiUtils.h"
 
 
-#ifndef BXBGeoHelpers
-#import "BXBGeoHelpers.h"
+#ifndef BXBGeocoderHelpers
+#import "BXBGeocoderHelpers.h"
 #endif
 
 //BXBGeoHelpers
@@ -95,7 +95,7 @@
     ENSURE_TYPE(callback,KrollCallback);
     ENSURE_UI_THREAD(forwardGeocoder,args);
     
-    BXBGeoHelpers * helpers = [[BXBGeoHelpers alloc] init];
+    BXBGeocoderHelpers * helpers = [[BXBGeocoderHelpers alloc] init];
     
     if ([CLLocationManager locationServicesEnabled]== NO)
     {
@@ -154,7 +154,7 @@
     ENSURE_UI_THREAD(reverseGeocoder,args);
     
     
-    BXBGeoHelpers * helpers = [[BXBGeoHelpers alloc] init];
+    BXBGeocoderHelpers * helpers = [[BXBGeocoderHelpers alloc] init];
     
     if ([CLLocationManager locationServicesEnabled]== NO)
     {
@@ -178,7 +178,7 @@
     
     _staleLimit = [TiUtils floatValue:[self valueForUndefinedKey:@"staleLimit"]def:15.0];
     
-    BXBGeoHelpers * helpers = [[BXBGeoHelpers alloc] init];
+    BXBGeocoderHelpers * helpers = [[BXBGeocoderHelpers alloc] init];
     
     if ([CLLocationManager locationServicesEnabled]== NO)
     {
@@ -228,7 +228,7 @@
 
 -(void)findPlace:(CLLocation*)location withCallback:(KrollCallback*) callback
 {
-    BXBGeoHelpers * helpers = [[BXBGeoHelpers alloc] init];
+    BXBGeocoderHelpers * helpers = [[BXBGeocoderHelpers alloc] init];
     CLLocationCoordinate2D latlon = [location coordinate];
     CLLocation *findLocation = [[CLLocation alloc] initWithLatitude:latlon.latitude longitude:latlon.longitude];
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
@@ -276,7 +276,7 @@
         return locManager;
     }
  
-    BXBGeoHelpers * helpers = [[BXBGeoHelpers alloc] init];
+    BXBGeocoderHelpers * helpers = [[BXBGeocoderHelpers alloc] init];
     [helpers requestPermission];
     
     if (locManager == nil) {
@@ -289,6 +289,11 @@
             if ([locManager respondsToSelector:@selector(setPurpose)]) {
                 [locManager setPurpose:purpose];
             }
+        }
+        if([TiUtils isIOS9OrGreater]){
+            #if IS_XCODE_7
+            locManager.allowsBackgroundLocationUpdates = YES;
+            #endif
         }
     }
     return locManager;
